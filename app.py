@@ -2,9 +2,18 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 import nltk
-nltk.download('punkt')
+import os
 
-# Load the trained model and vectorizer
+
+nltk_data_path = os.path.join(os.getcwd(), "nltk_data")
+if not os.path.exists(nltk_data_path):
+    os.makedirs(nltk_data_path)
+
+nltk.data.path.append(nltk_data_path)
+nltk.download('punkt', download_dir=nltk_data_path)
+
+
+
 model_path = "sentiment_model.pkl"
 vectorizer_path = "vectorizer.pkl"
 
@@ -16,15 +25,15 @@ with open(vectorizer_path, "rb") as vectorizer_file:
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 
-# Preprocess text function
+
 def preprocess_text(text):
     return text.lower()
 
-# Route to serve the frontend
+
 @app.route("/", methods=["GET", "POST"])
 def home():
     sentiment = None
-    sentiment_class = ""  # CSS class for styling
+    sentiment_class = ""  
 
     if request.method == "POST":
         text = request.form.get("tweet")
@@ -32,7 +41,7 @@ def home():
             text_vectorized = vectorizer.transform([preprocess_text(text)])
             sentiment = model.predict(text_vectorized)[0]
 
-            # Assign CSS classes for different sentiments, including "irrelevant"
+            
             sentiment=sentiment.lower()
             if sentiment == "positive":
                 sentiment_class = "positive"
@@ -47,5 +56,9 @@ def home():
     
     return render_template("index.html", sentiment=sentiment, sentiment_class=sentiment_class)
 
+import os
+port = int(os.environ.get("PORT", 5000)) 
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=port)
+

@@ -1,4 +1,4 @@
-/* Center everything */
+
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #4facfe, #00f2fe);
@@ -10,7 +10,6 @@ body {
     margin: 0;
 }
 
-/* Centered container */
 .container {
     width: 500px;
     background: rgba(0, 0, 0, 0.8);
@@ -20,13 +19,13 @@ body {
     text-align: center;
 }
 
-/* Title */
+
 h1 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
 
-/* Input box */
+
 input {
     width: 100%;
     padding: 10px;
@@ -35,7 +34,7 @@ input {
     border: none;
 }
 
-/* Button styling */
+
 button {
     margin-top: 20px;
     padding: 10px 20px;
