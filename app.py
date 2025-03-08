@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify, render_template
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
+import nltk
+nltk.download('punkt')
 
 # Load the trained model and vectorizer
 model_path = "sentiment_model.pkl"
