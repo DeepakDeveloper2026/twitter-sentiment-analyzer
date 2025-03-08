@@ -6,3 +6,4 @@ scikit-learn
 textblob
 wordcloud
 gunicorn
+flask==2.2.2
