@@ -4,11 +4,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 import nltk
 import os
 
-NLTK_DIR = "/opt/render/project/src/nltk_data"
-os.makedirs(NLTK_DIR, exist_ok=True)
+NLTK_DIR = os.path.join(os.getcwd(), "nltk_data")
 nltk.data.path.append(NLTK_DIR)
-nltk.download('punkt', download_dir=NLTK_DIR)
-
 
 model_path = "sentiment_model.pkl"
 vectorizer_path = "vectorizer.pkl"
