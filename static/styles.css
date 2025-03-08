@@ -1,0 +1,60 @@
+/* Center everything */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Centered container */
+.container {
+    width: 500px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Title */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Input box */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Button styling */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff416c;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff4b2b;
+}
+
+.positive { color: #34C759 !important; background-color: rgba(52, 199, 89, 0.2) !important; padding: 5px; border-radius: 5px; }
+.negative { color: #FF3B3F !important; background-color: rgba(255, 59, 63, 0.2) !important; padding: 5px; border-radius: 5px; }
+.neutral { color: #808080 !important; background-color: rgba(128, 128, 128, 0.2) !important; padding: 5px; border-radius: 5px; }
+.irrelevant { color: #FFA07A !important; background-color: rgba(255, 160, 122, 0.2) !important; padding: 5px; border-radius: 5px; }
+
+
+
