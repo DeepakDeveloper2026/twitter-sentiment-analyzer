@@ -4,6 +4,9 @@ from sklearn.feature_extraction.text import CountVectorizer
 import nltk
 import os
 
+import nltk
+import os
+
 NLTK_DIR = os.path.join(os.getcwd(), "nltk_data")
 nltk.data.path.append(NLTK_DIR)
 
