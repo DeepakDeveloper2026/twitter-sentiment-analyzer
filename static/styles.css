@@ -44,10 +44,12 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    transition: background 0.3s ease-in-out;
+    border-radius: 25px;
 }
 
 button:hover {
-    background: #ff4b2b;
+    background: #3dbf52;
 }
 
 .positive { color: #34C759 !important; background-color: rgba(52, 199, 89, 0.2) !important; padding: 5px; border-radius: 5px; }
